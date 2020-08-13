@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('https://i.icomoon.io/public/temp/8f48c3e4ae/MyProject/icomoon.eot?2py60w');
+  src:  url('https://i.icomoon.io/public/temp/8f48c3e4ae/MyProject/icomoon.eot?2py60w#iefix') format('embedded-opentype'),
+    url('https://i.icomoon.io/public/temp/8f48c3e4ae/MyProject/icomoon.ttf?2py60w') format('truetype'),
+    url('https://i.icomoon.io/public/temp/8f48c3e4ae/MyProject/icomoon.woff?2py60w') format('woff'),
+    url('https://i.icomoon.io/public/temp/8f48c3e4ae/MyProject/icomoon.svg?2py60w#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-heart:before {
+  content: "\f004";
+}
+.icon-clock-o:before {
+  content: "\f017";
+}
+.icon-calendar:before {
+  content: "\f073";
+}
+.icon-heart-o:before {
+  content: "\f08a";
+}
+.icon-bell-o:before {
+  content: "\f0a2";
+}
+.icon-th-menu:before {
+  content: "\e900";
+}
+.icon-chevron-down:before {
+  content: "\e901";
+}
+.icon-chevron-left:before {
+  content: "\e902";
+}
+.icon-chevron-right:before {
+  content: "\e903";
+}
+.icon-chevron-up:before {
+  content: "\e904";
+}
+.icon-cart:before {
+  content: "\e905";
+}
+.icon-play:before {
+  content: "\e912";
+}
+.icon-equalizer2:before {
+  content: "\e993";
+}
+.icon-menu:before {
+  content: "\e906";
+}
+.icon-americanexpress:before {
+  content: "\e907";
+  color: #2e77bc;
+}
+.icon-facebook:before {
+  content: "\e908";
+  color: #1877f2;
+}
+.icon-instagram:before {
+  content: "\e909";
+  color: #e4405f;
+}
+.icon-linkedin:before {
+  content: "\e90a";
+  color: #0077b5;
+}
+.icon-mastercard:before {
+  content: "\e90b";
+  color: #eb001b;
+}
+.icon-paypal:before {
+  content: "\e90c";
+  color: #00457c;
+}
+.icon-twitter:before {
+  content: "\e90d";
+  color: #1da1f2;
+}
+.icon-visa:before {
+  content: "\e90e";
+  color: #142787;
+}
+.icon-youtube:before {
+  content: "\e90f";
+  color: #f00;
+}
+.icon-params:before {
+  content: "\e910";
+}
