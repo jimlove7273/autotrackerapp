@@ -17,13 +17,14 @@ import Logout from './components/Logout'
 const App = React.memo((ckemailVerified) => {
 	const [loggedinuser, setLoggedinUser] = useState('')
 	const [emailVerified, setEmailVerified] = useState(false)
-	const [gotologin, setGotologin] = useState(false)
+	const [rendered, setRendered] = useState(false)
 
 //	const auto = useContext(AutoContexts)
 //	auto.somefunction()
 
     useEffect( () => {
         firebase.auth().onAuthStateChanged((user) => {
+			debugger
             if (user) { 
 
 			console.log("Logged In User")
@@ -31,7 +32,7 @@ const App = React.memo((ckemailVerified) => {
 			ckemailVerified = user.emailVerified
 			setEmailVerified(user.emailVerified)
 			setLoggedinUser(user.email)
-			setGotologin(false)
+			setRendered(true)
 
 			console.log("APP user", user)
 			console.log("APP useremail", user.email)
@@ -46,9 +47,9 @@ const App = React.memo((ckemailVerified) => {
 			console.log("ckemailVerified", emailVerified)
 			setEmailVerified(false)
 			setLoggedinUser('')
-			setGotologin(true)
 			console.log("Not Logged In")
-			return <Redirect to='/login'  />
+			setRendered(true)
+			//return <Redirect to='/login'  />
 
 			}
 		})
@@ -64,15 +65,9 @@ const App = React.memo((ckemailVerified) => {
                     <Route exact path="/logout" component={Logout} />
 					<Route exact path="/login" component={Login} />
 
-					{ (loggedinuser.length>0 && !ckemailVerified) && <Route exact path="/" component={Verifyemail} /> }
-					{/* { (loggedinuser.length>0 && ckemailVerified) && <Route exact path="/" component={Home} /> } */}
-					{ (loggedinuser.length<=0 && !ckemailVerified) && <Route exact path="/" component={Login} /> }
-					{ (gotologin) ? <Route exact path="/" component={Login} /> : <Route exact path="/" component={Home} /> }
-					{/* { (loggedinuser.length<=0 && ckemailVerified) && <Route exact path="/" component={Test} /> } */}
-
-					{/* { (loggedinuser.length<=0) && <Route exact path="/" component={Login} /> }
-					{ (loggedinuser.length>0 && !emailVerified) && <Route exact path="/" component={Verifyemail} /> }
-					{ (loggedinuser.length>0 && emailVerified) && <Route exact path="/" component={Home} /> } */}
+					{ loggedinuser.length <= 0 && rendered && <Route exact path="/" component={Login} /> }
+					{ loggedinuser.length > 0 && !ckemailVerified && rendered && <Route exact path="/" component={Verifyemail} /> }
+					{ loggedinuser.length > 0 && ckemailVerified && rendered && <Route exact path="/" component={Home} /> }
 
                 </Switch>  
             </Router>

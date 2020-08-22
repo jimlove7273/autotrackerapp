@@ -42,7 +42,7 @@ export const Home = () => {
 
 		<div className="container">
 			<div className="header">
-				<h1 className="my3">My Subaru Maintenance Tracker!</h1>
+				<h1 className="my3">Subaru Outback Maintenance Tracker!</h1>
 				<div>
 					<button className="btn btn-primary" onClick={logout}>Logout</button>
 				</div>
